@@ -1,0 +1,135 @@
+body {
+	padding: 0;
+	margin: 0;
+	
+	background: #000;
+}
+#videoContainer {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+ 	overflow: hidden;
+    z-index: -100;
+    display: none;
+}
+
+#videoContainer video {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;    
+}
+
+.bg-gloria {
+	background-color: #04458e;
+
+	height: 88px;
+}
+
+#logo {
+	height: 85%;
+	margin-top: 0.1em;
+}
+
+.no_right_padding {
+	padding-right: 0px;
+}
+
+.no_left_padding {
+	padding-left: 0px;
+}
+
+#clock {
+    margin-top: 0.4em;
+    font-size: 220%;
+    color: #fff;
+    line-height: 1;
+    text-align: center;
+}
+
+#date {
+	line-height: 1;
+	text-align: center;
+	color: #fff;
+	font-size: 140%;
+}
+
+#churchName {
+	margin-top: 0.5em;
+	font-size: 155%;
+	color: #fff;
+	text-align: right;
+	padding-right: 0.5em;
+}
+
+#churchSubName {
+	text-align: right;
+	color: #fff;
+	font-size: 120%;
+	font-weight: bold;
+	line-height: 1;
+	padding-right: 0.5em;
+}
+
+.verse {
+	/* Starting position */
+	-moz-transform:translateX(100%);
+	-webkit-transform:translateX(100%);	
+	transform:translateX(100%);
+	/* Apply animation to this element */	
+	-moz-animation: verse 15s linear infinite;
+	-webkit-animation: verse 15s linear infinite;
+	animation: verse 15s linear infinite;
+}
+
+/* Move it (define the animation) */
+@-moz-keyframes verse {
+	0%   { -moz-transform: translateX(100%); }
+	100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes verse {
+	0%   { -webkit-transform: translateX(100%); }
+	100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes verse {
+	0%   { 
+	-moz-transform: translateX(100%); /* Firefox bug fix */
+	-webkit-transform: translateX(100%); /* Firefox bug fix */
+	transform: translateX(100%); 		
+	}
+	100% { 
+	-moz-transform: translateX(-100%); /* Firefox bug fix */
+	-webkit-transform: translateX(-100%); /* Firefox bug fix */
+	transform: translateX(-100%); 
+	}
+}
+
+#versTicker {
+	margin-top: 0.7em;
+	padding-left: 1.2em;
+	padding-right: 1em;
+	border-left: 1px solid #fff;
+	border-right: 1px solid #fff;
+	color: #fff;
+	height: 66px;
+	overflow: hidden;
+	position: relative;
+	white-space: nowrap;
+	width: 1330px;
+}
+
+.force_width {
+	width: 1120px;
+}
+
+.verse {
+	margin-top: 0.4em;
+	font-size: 170%;
+}
+
+.loader {
+	text-align: center;
+	padding-top: 300px;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Gloria Satelit Player</title>
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<link href="./css/style.css" rel="stylesheet">
+	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" /> 
+
+
+</head>
+<body>
+	<div id="videoContainer">
+		<video autoplay >
+			<source src="" type="video/mp4">
+		</video>
+	</div>
+
+	<div class="content">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="loader"><img src="img/ajax-loader.gif"/>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<nav class=" fixed-bottom navbar-expand-sm bg-gloria">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-auto no_right_padding">
+					<img id="logo" src="../img/glorialogo.png"/>
+				</div>
+				<div class="col-md-auto no_left_padding">
+					<div id="churchName">Gereja Kristen Abdiel Gloria</div>
+					<div id="churchSubName">KOTA SATELIT</div>
+				</div>
+				<div class="col">
+					<!-- <div id="versTicker">
+						<div class="verse"></div>
+					</div>	 -->
+				</div>
+
+				<div class="col-md-auto no_left_padding" style="margin-right: 0.7em;">
+					<div id="clock"></div>
+					<div id="date"></div>
+				</div>
+			</div>
+		</div>
+    </nav>
+
+	<script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/moment.min.js"></script>
+    <script src="./js/player.js"></script>
+</body>
+</html>

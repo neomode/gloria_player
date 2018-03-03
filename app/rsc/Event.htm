@@ -1,0 +1,37 @@
+<h2>Event</h2>
+
+<h3><a href="javascript:ToogleForm('addEventForm')">Add New Event</a></h3>
+<div id="addEventForm" style="display: none;">
+	<input class="eventField" type="text" id="coordinator"  name="coordinator" placeholder="Coordinator" value=""><br/>
+	<input class="eventField" type="text" id="speaker"  name="speaker" placeholder="Speaker" value=""><br/>
+	<input class="eventField" type="text" id="theme"  name="theme" placeholder="Theme" value=""><br/>
+	<input class="eventField" type="text" id="place"  name="place" placeholder="Place" value=""><br/>
+	<input class="eventHour" type="text" id="hour"  name="hour" placeholder="Hour" value="">
+	<input class="eventDay" type="text" id="day"  name="day" placeholder="Day" value="">
+	<select id="month" name="month">
+		[MONTH]
+	</select>
+	<select id="year" name="year">
+		[YEAR]
+	</select><br/>
+	<input class="button" type="button"  onclick="javascript:AddEvent();" value="Add">
+</div>
+<div id="loader" style="display: none"><img src="img/ajax-loader.gif"></div>
+
+<div class="event event_head">
+	<div class="event_row coordinator">Coordinator</div>
+	<div class="event_row speaker">Speaker</div>
+	<div class="event_row theme">Theme</div>
+	<div class="event_row place">Place</div>
+	<div class="event_row datetime">Date and Time
+	</div>
+	<div class="event_row delete">&nbsp</div>
+	<div style="clear: both"></div>
+</div>
+
+<div id="eventContainer">
+[CONTENT]
+</div>
+
+
+<!--div id="aboutIcon"><img src="img/about.jpg"/></div-->

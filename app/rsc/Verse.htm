@@ -1,0 +1,18 @@
+<h2>Verse</h2>
+
+<h3><a href="javascript:ToogleForm('addVerseForm')">Add New Verse</a></h3>
+<div id="addVerseForm" style="display: none">
+	<input type="text" id="src"  name="src" placeholder="Verse" value="">
+	<!--input class="eventField" type="text" id="content"  name="content" placeholder="Content" value=""><br/-->
+	<input  type="hidden" id="title"  name="title"  value="Bible Verse">
+	<input  type="text" id="duration"  name="duration" placeholder="Duration in second"  value="">
+	<input class="button" type="button"  onclick="javascript:AddVerse()" value="Add">
+</div>
+<div id="loader" style="display: none"><img src="img/ajax-loader.gif"></div>
+
+<div id="verseContainer">
+[CONTENT]
+</div>
+
+<div style="clear: both"/>
+

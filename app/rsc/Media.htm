@@ -1,0 +1,82 @@
+<h2>Media</h2>
+
+<h3><a href="javascript:ToogleForm('addMediaForm')">Add New Media Files</a></h3>
+<div id="addMediaForm" style="display: none">
+	<!--form id="uploadForm" name="uploadForm" enctype="multipart/form-data" action="../docs/ws.php?request=uploadfile&maxfile=1" target="upload_target" method="POST"-->
+	<form id="uploadForm" name="uploadForm" enctype="multipart/form-data" action="ws.php" method="post">
+		<input type="text" id="name"  name="name" placeholder="Name" value="">
+		<input type="text" id="duration"  name="duration" placeholder="Duration in seconds" value="10">
+		<input type="hidden" name="request" value="addmedia">
+		<input type="hidden" name="object" value="media">
+		<input type="hidden" id="player_id" value="1">
+		<input type="hidden" id="playlist_type" value="media">
+
+		<input id="media-file0" name="media-file0" type="file">
+		<input class="button" type="button"  onclick="AddMediaFile()" value="Add">
+	</form>
+</div>
+<div id="loader" style="display: none"><img src="img/ajax-loader.gif"></div>
+
+<div id="playlist">
+	<h3> Playlist</h3>
+	<div id="player_playlist">
+		<ul id="organizer">
+			[PLAYLIST]
+		</ul>
+	</div>
+</div>
+
+<div id="media_asset">
+	<h3>Assets</h3>
+	
+	[ASSETS]
+	
+</div>
+
+
+<script>
+	Sortable.create("organizer", {
+		handles:$$('#organizer .sort_icon'),
+		onUpdate: function () 
+		{
+			UpdatePlaylist();
+		}
+	});
+
+	Droppables.add('player_playlist', {
+		accept: 'media',
+		hoverclass: 'hover',
+		onDrop: function(element) {
+			//alert("Dropped");
+			$(element.id).style.opacity = 1;
+			
+			var aParam = element.id.split('_');
+
+
+			var sHtml = "<li id=\"pl_" + element.id + "\"><div class=\"media_pl\" >" + 
+								"<div style=\"float: left\"><div class=\"media_name\">" + $('name_' + aParam[1]).innerHTML  + "</div></div>" +
+								"<div style=\"float: right; padding-left: 10px; position: relative; top: -0.5em\"><span class=\"sort_icon\"><img src=\"img/drag.png\"></span></div>" +
+								"<div id=\"deleteButton_" + aParam[1] + "\" style=\"float: right; padding-left: 10px; position: relative; top: -0.5em\"><input class=\"button deleteButton\"  type=\"button\"  onclick=\"DeleteFromPlaylist(" + aParam[1] + ")\" value=\"Remove\"></div>" +	"<div style=\"clear: both\"></div>" +
+							"</div></li>";
+
+			//var sHtml = "<li>" + $('name_' + aParam[1]).innerHTML + " <span class=\"sort_icon\">move</span></li>";
+			$('organizer').innerHTML += sHtml;
+
+			Sortable.create("organizer", {
+				handles:$$('#organizer .sort_icon'),
+				onUpdate: function () 
+				{
+					UpdatePlaylist();
+				}
+			});
+			
+	
+			UpdatePlaylist();
+		}
+	});
+
+	
+	
+</script>
+
+<div style="clear: both"></div>
