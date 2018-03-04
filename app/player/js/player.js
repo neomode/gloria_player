@@ -72,7 +72,7 @@ function playVerse() {
 
 function updateDateTime() {
 	$("#clock").html(moment().format("hh:mm"));
-	$("#date").html(moment().format("d MMM"));
+	$("#date").html(moment().format("D MMM"));
 }
 
 function showVideo(show) {
